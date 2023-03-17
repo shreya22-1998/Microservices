@@ -1,6 +1,7 @@
 package com.learn.microservices.productservice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.learn.microservices.productservice.controller.ProductController;
 import com.learn.microservices.productservice.repository.ProductRepository;
 import com.learn.microservices.productservice.service.ProductService;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,14 +30,14 @@ class ProductServiceApplicationTests {
     private MockMvc mockMvc;
    
     @Mock
-    private ProductRepository productRepository;
+    private ProductController productController;
     
     @Mock
     private ProductService productService;
     
     @BeforeEach
     public void setUp(){
-        mockMvc= MockMvcBuilders.standaloneSetup(productRepository).build();
+        mockMvc= MockMvcBuilders.standaloneSetup(productController).build();
     }
 	@Test
 	void testGetRequest() throws Exception {
