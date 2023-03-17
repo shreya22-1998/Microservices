@@ -29,7 +29,7 @@ class ProductServiceApplicationTests {
     @Autowired
     private MockMvc mockMvc;
    
-    @Mock
+    @InjectMocks
     private ProductController productController;
     
     @Mock
