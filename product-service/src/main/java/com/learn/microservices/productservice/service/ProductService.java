@@ -10,7 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -33,7 +34,7 @@ public class ProductService {
 
     public List<ProductResponse> getAllProducts() {
         List<Product> productList=productRepository.findAll();
-        return productList.stream().map(this::mapToProductResponse).toList();
+        return productList.stream().map(this::mapToProductResponse).collect(Collectors.toList());
     }
 
     private ProductResponse mapToProductResponse(Product product) {
