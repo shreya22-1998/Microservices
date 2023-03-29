@@ -13,13 +13,15 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="inventory-service" target="17" />
-      <module name="order-service" target="17" />
-      <module name="product-service" target="16" />
+      <module name="inventory-service" target="11" />
+      <module name="Microservices" target="16" />
+      <module name="order-service" target="11" />
+      <module name="product-service" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Microservices" options="-parameters" />
       <module name="inventory-service" options="-parameters" />
       <module name="order-service" options="-parameters" />
       <module name="product-service" options="-parameters" />
